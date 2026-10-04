@@ -1,0 +1,111 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  min-height: 0;
+  flex: 1;
+}
+
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(0 0 0 / 20%) transparent;
+}
+
+.list {
+  display: flex;
+  min-height: 100%;
+  width: min(100%, 760px);
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 12px 16px 8px;
+}
+
+.item {
+  margin-top: 2px;
+}
+
+.runStart {
+  margin-top: 8px;
+}
+
+.day {
+  position: sticky;
+  top: 6px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 4px;
+  pointer-events: none;
+
+  span {
+    padding: 3px 10px;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    background: rgb(0 0 0 / 22%);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.notice {
+  display: grid;
+  margin: auto;
+  justify-items: center;
+  gap: 6px;
+  padding: 16px 22px;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  background: rgb(0 0 0 / 22%);
+  backdrop-filter: blur(10px);
+}
+
+.empty {
+  max-width: 280px;
+
+  span {
+    font-size: 14px;
+  }
+}
+
+.scrollDown {
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: var(--tg-text-secondary);
+  background: var(--tg-surface);
+  box-shadow: var(--tg-bubble-shadow);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--tg-primary);
+  }
+}
+
+@media (max-width: 48em) {
+  .list {
+    padding: 8px;
+  }
+}
+
+.dayGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+// message picked for a reply with Ctrl/⌘ + ↑ / ↓
+.highlighted {
+  border-radius: 12px;
+  background: rgb(51 144 236 / 22%);
+  transition: background-color 200ms ease;
+}

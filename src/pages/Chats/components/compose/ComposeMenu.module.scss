@@ -1,0 +1,51 @@
+.dropdown {
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.item {
+  min-height: 52px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 17px;
+}
+
+.section {
+  color: var(--tg-text);
+
+  &:where([data-position='left']) {
+    margin-inline-end: 28px;
+  }
+}
+
+.icon {
+  position: relative;
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+
+  svg {
+    position: absolute;
+    transition:
+      opacity 180ms ease,
+      transform 220ms ease;
+  }
+}
+
+.close {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+
+.opened {
+  .pencil {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.6);
+  }
+
+  .close {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,33 @@
+.panel {
+  position: relative;
+  display: flex;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px 8px 10px;
+}
+
+.body {
+  position: relative;
+  min-height: 0;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: light-dark(rgb(0 0 0 / 18%), rgb(255 255 255 / 18%)) transparent;
+}
+
+.fab {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 3;
+}

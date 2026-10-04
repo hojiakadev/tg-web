@@ -1,0 +1,271 @@
+.conversation {
+  display: flex;
+  height: 100%;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px 7px 14px;
+  border-radius: 20px;
+  background: light-dark(#fff, #212121);
+  box-shadow: 0 6px 24px rgb(16 35 47 / 12%);
+
+  :global(.mantine-ActionIcon-root) {
+    color: light-dark(#707579, #aaa);
+  }
+}
+
+.back {
+  display: none;
+}
+
+.title {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 1px;
+
+  strong {
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  span {
+    color: light-dark(#707579, #aaa);
+    font-size: 14px;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.messageArea {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  padding: 20px clamp(12px, 8vw, 120px);
+}
+
+.status {
+  align-self: center;
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgb(0 0 0 / 24%);
+}
+
+.emptyState {
+  display: grid;
+  max-width: 280px;
+  margin: auto;
+  justify-items: center;
+  gap: 6px;
+  padding: 18px 22px;
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  background: rgb(0 0 0 / 22%);
+
+  span {
+    font-size: 13px;
+  }
+}
+
+.bubble {
+  display: grid;
+  max-width: min(520px, 78%);
+  gap: 2px;
+  padding: 6px 10px 5px;
+  border: 0;
+  border-radius: 14px;
+  color: light-dark(#000, #fff);
+  font: inherit;
+  font-size: 15px;
+  text-align: left;
+  overflow-wrap: anywhere;
+  box-shadow: 0 1px 2px rgb(16 35 47 / 15%);
+  cursor: pointer;
+
+  small {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3px;
+    color: light-dark(#8e9399, #aaa);
+    font-size: 12px;
+  }
+}
+
+.incoming {
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  background: light-dark(#fff, #212121);
+}
+
+.outgoing {
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  background: light-dark(#e3fee0, #766ac8);
+
+  small {
+    color: light-dark(#4fae4e, rgb(255 255 255 / 70%));
+  }
+}
+
+.quoted {
+  display: block;
+  padding: 3px 8px;
+  border-left: 3px solid #3390ec;
+  border-radius: 4px;
+  color: light-dark(#3390ec, #8ebcf0);
+  font-size: 13px;
+  background: rgb(51 144 236 / 10%);
+}
+
+.outgoing .quoted {
+  border-color: light-dark(#4fae4e, #fff);
+  color: light-dark(#4fae4e, #fff);
+  background: light-dark(rgb(79 174 78 / 12%), rgb(255 255 255 / 15%));
+}
+
+.composer {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 4px 12px 8px;
+}
+
+.replyBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 64px 6px 0;
+  padding: 6px 12px;
+  border-left: 3px solid #3390ec;
+  border-radius: 12px;
+  font-size: 13px;
+  background: light-dark(#fff, #212121);
+
+  span {
+    display: grid;
+    min-width: 0;
+    gap: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  b {
+    color: #3390ec;
+  }
+
+  button {
+    display: inline-grid;
+    border: 0;
+    color: light-dark(#707579, #aaa);
+    background: transparent;
+    cursor: pointer;
+  }
+}
+
+.composerRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.inputBox {
+  display: flex;
+  min-height: 54px;
+  flex: 1;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  border-radius: 16px;
+  background: light-dark(#fff, #212121);
+  box-shadow: 0 1px 2px rgb(16 35 47 / 15%);
+}
+
+.messageInput {
+  flex: 1;
+
+  input {
+    color: inherit;
+    font-size: 16px;
+  }
+}
+
+.composerButton {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: light-dark(#707579, #aaa);
+  background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    color: #3390ec;
+  }
+}
+
+.sendButton {
+  display: inline-grid;
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #3390ec;
+  background: light-dark(#fff, #212121);
+  box-shadow: 0 1px 2px rgb(16 35 47 / 15%);
+  cursor: pointer;
+
+  &:disabled {
+    color: light-dark(#a2acb4, #5b5b5b);
+    cursor: default;
+  }
+}
+
+@media (max-width: 48em) {
+  .header {
+    border-radius: 0;
+  }
+
+  .back {
+    display: inline-flex;
+  }
+
+  .actions > :not(:last-child) {
+    display: none;
+  }
+
+  .messageArea {
+    padding: 14px 10px;
+  }
+
+  .bubble {
+    max-width: 88%;
+  }
+}

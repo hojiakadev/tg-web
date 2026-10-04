@@ -1,0 +1,88 @@
+.hero {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 8px 16px 20px;
+}
+
+.name {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.status {
+  color: var(--tg-text-secondary);
+  font-size: 14px;
+}
+
+.online {
+  color: var(--tg-primary);
+}
+
+.card {
+  display: grid;
+  margin: 0 12px 12px;
+  padding: 6px;
+  border-radius: 16px;
+  background: var(--tg-surface);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 12px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--tg-hover);
+  }
+}
+
+.icon {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.green {
+  background: var(--tg-success);
+}
+
+.blue {
+  background: var(--tg-primary);
+}
+
+.gray {
+  background: #8e99a4;
+}
+
+.text {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+
+  span {
+    overflow: hidden;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+  }
+
+  small {
+    color: var(--tg-text-secondary);
+    font-size: 14px;
+  }
+}

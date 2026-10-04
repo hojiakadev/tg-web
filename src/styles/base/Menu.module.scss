@@ -1,0 +1,39 @@
+// Telegram-style dropdown menus, applied to every Mantine `Menu` through the theme.
+.dropdown {
+  padding: 4px;
+  border: 0;
+  border-radius: 12px;
+  background: light-dark(rgb(255 255 255 / 90%), rgb(33 33 33 / 90%));
+  backdrop-filter: blur(24px);
+  box-shadow: 0 4px 22px rgb(0 0 0 / 18%);
+}
+
+.item {
+  min-height: 36px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: var(--tg-text);
+  font-size: 14px;
+  font-weight: 500;
+
+  &:where([data-hovered]) {
+    background: light-dark(rgb(0 0 0 / 6%), rgb(255 255 255 / 8%));
+  }
+
+  &:where([data-danger]) {
+    color: var(--tg-danger);
+  }
+}
+
+.itemSection {
+  color: var(--tg-text-secondary);
+
+  &:where([data-position='left']) {
+    margin-inline-end: 18px;
+  }
+}
+
+.divider {
+  margin: 4px 0;
+  border-color: light-dark(rgb(0 0 0 / 8%), rgb(255 255 255 / 8%));
+}

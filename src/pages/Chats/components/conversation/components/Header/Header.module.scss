@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px 7px 14px;
+  border-radius: 20px;
+  background: var(--tg-surface);
+  box-shadow: var(--tg-shadow);
+}
+
+.back {
+  display: none;
+}
+
+.title {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 1px;
+
+  strong {
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  span {
+    overflow: hidden;
+    color: var(--tg-text-secondary);
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.online {
+  color: var(--tg-primary) !important;
+}
+
+@media (max-width: 48em) {
+  .header {
+    padding-left: 6px;
+    border-radius: 0;
+  }
+
+  .back {
+    display: inline-flex;
+  }
+}

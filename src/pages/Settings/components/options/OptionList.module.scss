@@ -1,0 +1,85 @@
+.card {
+  display: grid;
+  margin: 0 12px 12px;
+  padding: 6px;
+  border-radius: 16px;
+  background: var(--tg-surface);
+}
+
+.option {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 18px;
+  padding: 10px;
+  border: 0;
+  border-radius: 12px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+
+  &:hover {
+    background: var(--tg-hover);
+  }
+}
+
+.icon {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.label {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.value {
+  color: var(--tg-primary);
+  font-size: 14px;
+}
+
+.empty {
+  padding: 40px 16px;
+  color: var(--tg-text-secondary);
+  text-align: center;
+}
+
+.red {
+  background: #f0624e;
+}
+
+.green {
+  background: var(--tg-success);
+}
+
+.gray {
+  background: #8e99a4;
+}
+
+.blue {
+  background: var(--tg-primary);
+}
+
+.pink {
+  background: #e5547d;
+}
+
+.purple {
+  background: #a86de8;
+}
+
+// touch screens without a physical keyboard
+@media (hover: none) and (pointer: coarse) {
+  .desktopOnly {
+    display: none;
+  }
+}

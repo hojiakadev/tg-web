@@ -1,0 +1,226 @@
+@use '@/styles/base/mixins' as mixins;
+
+.card {
+  width: min(100%, 460px);
+  padding: 38px 20px 28px;
+  background: light-dark(rgb(255 255 255 / 97%), rgb(34 34 34 / 98%));
+  box-shadow: 0 14px 40px rgb(15 23 42 / 12%);
+}
+
+.logo {
+  display: grid;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 24px;
+  place-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #4c91e8;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.heading {
+  margin-bottom: 30px;
+
+  h1 {
+    @include mixins.heading;
+  }
+
+  .description {
+    @include mixins.description;
+  }
+}
+
+.qrHeading {
+  margin-bottom: 20px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 8px;
+    @include mixins.heading;
+  }
+}
+
+.qrFrame {
+  display: grid;
+  width: min(100%, 280px);
+  height: 280px;
+  margin: 0 auto;
+  padding: 12px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 18px;
+  background: light-dark(#eef6fd, #fff);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.qrSteps {
+  display: grid;
+  gap: 14px;
+  margin: 26px 12px 28px;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  line-height: 1.35;
+  counter-reset: qr-step;
+
+  li {
+    position: relative;
+    min-height: 28px;
+    padding-left: 40px;
+    counter-increment: qr-step;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border-radius: 50%;
+      background: light-dark(#edf4fd, #343b47);
+      color: light-dark(#4186e0, #a391f0);
+      content: counter(qr-step);
+      font-size: 16px;
+    }
+  }
+}
+
+.qrRetry {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: light-dark(#4186e0, #a391f0);
+  font: inherit;
+  cursor: pointer;
+}
+
+.form {
+  display: grid;
+  gap: 24px;
+}
+
+.field {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  min-height: 68px;
+  padding: 0 52px 0 20px;
+  border: 2px solid light-dark(#dcdfe3, #3b3f46);
+  border-radius: 30px;
+  background: transparent;
+  font-size: 18px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.input:focus {
+  border-color: #3390ec;
+  box-shadow: 0 0 0 1px #3390ec;
+}
+
+.fieldLabel {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  z-index: 1;
+  margin: 0;
+  padding: 0 8px;
+  background: light-dark(#fff, #222);
+  color: light-dark(#9da0a4, #9ca0a8);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.maskInput {
+  width: 100% !important;
+  min-height: 68px;
+  padding: 0 16px 0 72px !important;
+  border: 2px solid light-dark(#dcdfe3, #3b3f46);
+  border-radius: 30px;
+  background: transparent;
+  color: light-dark(#111, #f4f4f5);
+  font-size: 18px;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.maskInput:focus {
+  border-color: #3390ec;
+  box-shadow: 0 0 0 1px #3390ec;
+}
+
+.maskInput::placeholder {
+  color: light-dark(#a1a3a6, #858991);
+}
+
+.errorLabel {
+  color: #e53935;
+}
+
+.submit {
+  min-height: 56px;
+  margin-top: 6px;
+  border-radius: 28px;
+  background: light-dark(#4e8fe3, #8876dc);
+  font-size: 16px;
+  font-weight: 700;
+
+  &:hover {
+    background: light-dark(#3f82d6, #7968ca);
+  }
+}
+
+.link {
+  @include mixins.link;
+}
+
+@media (max-width: 560px) {
+  .card {
+    width: min(100%, 400px);
+    padding: 28px 20px 24px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 18px;
+  }
+
+  .qrFrame {
+    width: min(100%, 250px);
+    height: 250px;
+  }
+
+  .heading {
+    margin-bottom: 24px;
+  }
+
+  .link {
+    &:first-of-type {
+      margin-top: 24px;
+    }
+
+    & + & {
+      margin-top: 24px;
+    }
+  }
+}

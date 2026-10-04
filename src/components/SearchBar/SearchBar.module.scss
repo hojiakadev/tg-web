@@ -1,0 +1,59 @@
+.root {
+  display: flex;
+  height: 42px;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px 0 14px;
+  border: 2px solid transparent;
+  border-radius: 22px;
+  background: var(--tg-surface-secondary);
+  cursor: text;
+  transition:
+    border-color 150ms ease,
+    background-color 150ms ease;
+
+  &:focus-within {
+    border-color: var(--tg-primary);
+    background: var(--tg-surface);
+
+    .icon {
+      color: var(--tg-primary);
+    }
+  }
+}
+
+.icon {
+  flex: 0 0 auto;
+  color: light-dark(#a2acb4, #707579);
+}
+
+.input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  color: inherit;
+  font: inherit;
+  font-size: 16px;
+  background: transparent;
+  appearance: none;
+
+  &::placeholder {
+    color: light-dark(#a2acb4, #707579);
+  }
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
+}
+
+.clear {
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  color: light-dark(#a2acb4, #707579);
+  background: transparent;
+  cursor: pointer;
+}

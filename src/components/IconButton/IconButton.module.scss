@@ -1,0 +1,8 @@
+.root {
+  flex: 0 0 auto;
+  color: var(--tg-text-secondary);
+
+  &:hover {
+    background: var(--tg-hover);
+  }
+}

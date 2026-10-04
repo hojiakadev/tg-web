@@ -1,0 +1,66 @@
+.hero {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 8px 16px 20px;
+}
+
+.name {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.online {
+  color: #3390ec;
+  font-size: 14px;
+}
+
+.offline {
+  color: light-dark(#707579, #aaa);
+  font-size: 14px;
+}
+
+.card {
+  margin: 0 12px 12px;
+  padding: 6px;
+  border-radius: 16px;
+  background: light-dark(#fff, #212121);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+
+.rowIcon {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.rowText {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+
+  span {
+    overflow: hidden;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+  }
+
+  small {
+    color: light-dark(#707579, #aaa);
+    font-size: 14px;
+  }
+}

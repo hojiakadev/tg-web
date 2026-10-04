@@ -1,0 +1,96 @@
+.root {
+  --button-height: 42px;
+  --button-padding-x: 16px;
+  --button-radius: 16px;
+
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  min-height: var(--button-height);
+  border-radius: var(--button-radius);
+  padding-inline: var(--button-padding-x);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.25;
+  transition:
+    background-color 120ms ease,
+    box-shadow 120ms ease,
+    transform 120ms ease;
+
+  &:active {
+    transform: scale(0.997) translateY(1px);
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 3px solid rgb(51 144 236 / 35%);
+  }
+
+  &[data-disabled],
+  &:disabled {
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  &[data-loading] {
+    cursor: wait;
+  }
+}
+
+.label {
+  position: static;
+  white-space: nowrap;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.rippleLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ripple {
+  position: absolute;
+  top: var(--ripple-y);
+  left: var(--ripple-x);
+  width: var(--ripple-size);
+  height: var(--ripple-size);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 24%);
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 560ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.loader {
+  position: relative;
+  z-index: 2;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+@keyframes ripple {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ripple {
+    animation-duration: 1ms;
+  }
+}

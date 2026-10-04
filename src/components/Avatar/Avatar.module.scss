@@ -1,0 +1,75 @@
+.avatar {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  color: #fff;
+  font-size: calc(var(--avatar-size) * 0.38);
+  font-weight: 500;
+  line-height: 1;
+  user-select: none;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.icon {
+  width: 42%;
+  height: 42%;
+}
+
+// sizes
+.xs {
+  --avatar-size: 24px;
+}
+
+.sm {
+  --avatar-size: 42px;
+}
+
+.md {
+  --avatar-size: 54px;
+}
+
+.lg {
+  --avatar-size: 120px;
+}
+
+// Telegram avatar palettes (index from `avatarColorIndex`)
+.color0 {
+  background: linear-gradient(#ff885e, #ff516a);
+}
+
+.color1 {
+  background: linear-gradient(#ffcd6a, #ffa85c);
+}
+
+.color2 {
+  background: linear-gradient(#82b1ff, #665fff);
+}
+
+.color3 {
+  background: linear-gradient(#a0de7e, #54cb68);
+}
+
+.color4 {
+  background: linear-gradient(#53edd6, #28c9b7);
+}
+
+.color5 {
+  background: linear-gradient(#72d5fd, #2a9ef1);
+}
+
+.color6 {
+  background: linear-gradient(#e0a2f3, #d669ed);
+}
+
+.saved {
+  background: linear-gradient(#72d5fd, #2a9ef1);
+}

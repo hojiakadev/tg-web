@@ -1,0 +1,31 @@
+.section + .section {
+  margin-top: 18px;
+}
+
+.title {
+  margin-bottom: 6px;
+  color: var(--tg-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  font-size: 14px;
+
+  & + & {
+    border-top: 1px solid var(--tg-border);
+  }
+}
+
+.keys {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  color: var(--tg-text-secondary);
+}

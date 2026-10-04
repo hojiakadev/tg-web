@@ -1,0 +1,7 @@
+dist/
+node_modules/
+public/
+pnpm-lock.yaml
+package.json
+src/components/Icon/**/*.svg
+src/containers/FaceId/lib

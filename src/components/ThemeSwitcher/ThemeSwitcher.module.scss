@@ -1,0 +1,24 @@
+.root {
+  color: light-dark(rgb(49 67 79 / 88%), rgb(224 215 255 / 92%));
+  background: light-dark(rgb(255 255 255 / 65%), rgb(44 27 57 / 82%));
+  box-shadow: 0 8px 24px rgb(15 23 42 / 10%);
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+
+  &:hover {
+    color: light-dark(#2381cc, #b39aff);
+    background: light-dark(rgb(255 255 255 / 88%), rgb(67 44 82 / 94%));
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline: 3px solid light-dark(rgb(51 144 236 / 35%), rgb(164 134 255 / 42%));
+    outline-offset: 3px;
+  }
+}
+
+.icon {
+  display: inline-flex;
+}

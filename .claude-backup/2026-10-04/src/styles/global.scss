@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// :root{}
+
+#root {
+  max-width: 100%;
+  min-height: 100svh;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+// Mantine switches the theme with `data-mantine-color-scheme`. Declaring `color-scheme` here lets the
+// production CSS transform (Lightning CSS lowers `light-dark()` to variables) follow the active theme.
+:root[data-mantine-color-scheme='light'] {
+  color-scheme: light;
+}
+
+:root[data-mantine-color-scheme='dark'] {
+  color-scheme: dark;
+}

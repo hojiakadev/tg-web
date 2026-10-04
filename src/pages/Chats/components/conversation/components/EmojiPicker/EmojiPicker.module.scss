@@ -1,0 +1,27 @@
+.dropdown {
+  padding: 8px;
+  border: 0;
+  background: var(--tg-surface);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 36px);
+  gap: 2px;
+}
+
+.emoji {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  font-size: 22px;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--tg-hover);
+  }
+}

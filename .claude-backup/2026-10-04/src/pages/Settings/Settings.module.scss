@@ -1,0 +1,15 @@
+.panel {
+  background: light-dark(#f4f4f5, #181818);
+}
+
+.title {
+  flex: 1;
+  margin-left: 6px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.icon {
+  flex: 0 0 auto;
+  color: light-dark(#707579, #aaa);
+}

@@ -1,0 +1,71 @@
+.root {
+  position: relative;
+  display: flex;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    url('@/assets/svg/pattern.svg'),
+    linear-gradient(
+      120deg,
+      rgb(219 221 187 / 76%) 0%,
+      rgb(107 165 135 / 76%) 33%,
+      rgb(213 216 141 / 76%) 66%,
+      rgb(136 184 132 / 76%) 100%
+    );
+  background-color: #b2c99b;
+  background-position: center;
+  background-repeat: repeat-x;
+  background-blend-mode: soft-light, normal;
+}
+
+:global([data-mantine-color-scheme='dark']) .root {
+  background-image:
+    url('@/assets/svg/pattern.svg'),
+    linear-gradient(
+      135deg,
+      rgb(79 91 213 / 16%) 0%,
+      rgb(150 47 191 / 14%) 33%,
+      rgb(221 108 185 / 14%) 66%,
+
+      rgb(79 91 213 / 16%) 100%
+    );
+  background-color: #08070c;
+  background-blend-mode: soft-light, normal;
+}
+
+.root::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at center, transparent 25%, rgb(18 52 45 / 10%));
+  content: '';
+  pointer-events: none;
+}
+
+.switcher {
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  z-index: 2;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 72px 20px 32px;
+}
+
+@media (max-width: 560px) {
+  .switcher {
+    top: 16px;
+    right: 16px;
+  }
+
+  .content {
+    align-items: flex-start;
+    padding: 78px 12px 24px;
+  }
+}

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Telegram Web design tokens — shared by every CSS module.
+:root {
+  --tg-primary: #3390ec;
+  --tg-primary-hover: #2b82d8;
+  --tg-primary-soft: light-dark(#e8f2fd, rgb(51 144 236 / 16%));
+  --tg-text: light-dark(#000, #fff);
+  --tg-text-secondary: light-dark(#707579, #aaa);
+  --tg-surface: light-dark(#fff, #212121);
+  --tg-surface-secondary: light-dark(#f4f4f5, #181818);
+  --tg-hover: light-dark(#f4f4f5, #2c2c2c);
+  --tg-border: light-dark(#dfe1e5, #303030);
+  --tg-danger: #e53935;
+  --tg-success: #4fae4e;
+  --tg-bubble-in: light-dark(#fff, #212121);
+  --tg-bubble-out: light-dark(#eeffde, #766ac8);
+  --tg-bubble-out-meta: light-dark(#4fae4e, rgb(255 255 255 / 70%));
+  --tg-shadow: 0 6px 24px rgb(16 35 47 / 14%);
+  --tg-bubble-shadow: 0 1px 2px rgb(16 35 47 / 15%);
+}
+
+#root {
+  max-width: 100%;
+  min-height: 100svh;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--tg-text);
+}
+
+// Mantine switches the theme with `data-mantine-color-scheme`. Declaring `color-scheme` here lets the
+// production CSS transform (Lightning CSS lowers `light-dark()` to variables) follow the active theme.
+:root[data-mantine-color-scheme='light'] {
+  color-scheme: light;
+}
+
+:root[data-mantine-color-scheme='dark'] {
+  color-scheme: dark;
+}

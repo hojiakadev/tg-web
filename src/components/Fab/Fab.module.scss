@@ -1,0 +1,23 @@
+.fab {
+  display: inline-grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--tg-primary);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    transform 150ms ease;
+
+  &:hover {
+    background: var(--tg-primary-hover);
+  }
+
+  &:active {
+    transform: scale(0.94);
+  }
+}

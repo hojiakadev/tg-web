@@ -1,0 +1,82 @@
+@use '@/styles/base/mixins' as mixins;
+
+.qrHeading {
+  margin-bottom: 20px;
+  text-align: center;
+
+  h1 {
+    margin-bottom: 8px;
+    @include mixins.heading;
+  }
+}
+
+.description {
+  @include mixins.description;
+}
+
+.qrFrame {
+  display: grid;
+  width: min(100%, 280px);
+  height: 280px;
+  margin: 0 auto;
+  padding: 12px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 18px;
+  background: light-dark(#eef6fd, #eef6fd);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+    background: transparent;
+  }
+}
+
+.qrRetry {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: light-dark(#4186e0, #a391f0);
+  font: inherit;
+  cursor: pointer;
+}
+
+.link {
+  @include mixins.link;
+}
+
+.qrSteps {
+  display: grid;
+  gap: 14px;
+  margin: 26px 12px 28px;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  line-height: 1.35;
+  counter-reset: qr-step;
+
+  li {
+    position: relative;
+    min-height: 28px;
+    padding-left: 40px;
+    counter-increment: qr-step;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border-radius: 50%;
+      background: light-dark(#edf4fd, #343b47);
+      color: light-dark(#4186e0, #a391f0);
+      content: counter(qr-step);
+      font-size: 16px;
+    }
+  }
+}
